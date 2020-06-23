@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<style>
+			#main {
+				width: 95%;
+				margin: auto auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="main">
+			<div class="jumbotron">
+				<div class="container">
+					<h1>xxxxx选票正在进行中</h1>
+					<p>2020届xxxx选票</p>
+					<p><a class="btn btn-primary btn-lg" href="#" role="button">立即参赛</a></p>
+				</div>
+			</div>
+
+			<div id="voter" class="row">
+				<div v-for="voter in voters" class="col-xs-6 col-md-3">
+					<div class="thumbnail">
+						{{voter.name}}
+						<img :src="voter.profilePhoto">
+						<div class="caption">
+							<p>
+								<a href="#" class="btn btn-primary" role="button">为TA投一票</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</body>
+	<script>
+		var voter = new Vue({
+			el: '#voter',
+			data: {
+				voters: [
+					{name: '清扬', profilePhoto: './images/清扬.jpg'},
+					{name: '兰兰', profilePhoto: './images/兰兰.jpg'},
+					{name: '汤王王', profilePhoto: './images/汤王王.jpg'},
+					{name: '首彭', profilePhoto: './images/首彭.jpg'},
+					{name: '王杰', profilePhoto: './images/王杰.jpg'},
+					{name: '郎二', profilePhoto: './images/郎二.jpg'},
+					{name: '金泰', profilePhoto: './images/金泰.jpg'},
+					{name: '彭宇', profilePhoto: './images/彭宇.jpg'},
+					{name: '孙平', profilePhoto: './images/孙平.jpg'},
+					{name: '香容', profilePhoto: './images/香容.jpg'},
+					{name: '离肯', profilePhoto: './images/离肯.jpg'},
+				]
+			}
+		});
+
+	</script>
+</html>
